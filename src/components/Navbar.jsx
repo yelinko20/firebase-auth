@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 export default function Navbar() {
-  const { username, isLogin,setIsLogin } = useContext(UserContext);
+  const { username,setUsername, isLogin,setIsLogin } = useContext(UserContext);
   return (
     <header className="fixed w-full top-0 left-0 z-20 p-4">
       <nav className="container mx-auto flex justify-between items-center">
