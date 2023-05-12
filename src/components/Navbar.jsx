@@ -23,7 +23,7 @@ export default function Navbar() {
             </Link>
           )}
           {isLogin  && (
-            <button onClick={() => setIsLogin(false)} className="px-3 py-2 bg-emerald-500 text-white rounded-md">
+            <button onClick={() => {setIsLogin(false),setUsername("Guest")} className="px-3 py-2 bg-emerald-500 text-white rounded-md">
               Sign Out
             </button>
           )}
