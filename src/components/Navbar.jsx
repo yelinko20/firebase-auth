@@ -2,7 +2,12 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "../context/UserContext";
 export default function Navbar() {
+  // const [isLogin, setIsLogin] = useState(false);
   const { username,setUsername, isLogin,setIsLogin } = useContext(UserContext);
+  function signout() {
+    setUsername("Guest")
+    setIsLogin(false)
+  }
   return (
     <header className="fixed w-full top-0 left-0 z-20 p-4">
       <nav className="container mx-auto flex justify-between items-center">
@@ -23,7 +28,7 @@ export default function Navbar() {
             </Link>
           )}
           {isLogin  && (
-            <button onClick={() => {setIsLogin(false),setUsername("Guest")} className="px-3 py-2 bg-emerald-500 text-white rounded-md">
+            <button onClick={signout} className="px-3 py-2 bg-emerald-500 text-white rounded-md">
               Sign Out
             </button>
           )}
